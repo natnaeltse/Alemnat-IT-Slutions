@@ -1,0 +1,68 @@
+@mixin home {
+  .home {
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    // color: $myGray;
+    overflow: hidden;
+  
+    .carousel-container {
+      width: 300%;
+      height: 100vh;
+      display: flex;
+      position: relative;
+      transition: left 1s;
+      overflow: hidden;
+
+      .container {
+        // background: rgba(0, 0, 0, 0.5);
+        
+        p {
+          width: 400px;
+        }
+      }
+      
+    }
+    .carousel {
+      @include carousel-div ();
+    }
+  
+    .first {
+      background: url(../images/bg-005.jpg) center;
+      background-size: cover;
+      color: $myWhite;
+      
+    }
+    
+    .second {
+      background: url(../images/web.jpg) center;
+      background-size: cover;
+      color: #fff;
+    }
+  
+    div.carousel-index-div {
+      position: absolute;
+      left: 4rem;
+      bottom: 5%;
+      display: flex;
+  
+      .carousel-index {
+        list-style: none;
+        margin: 0 10px 0 0;
+        width: 16px;
+        height: 16px;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: 1s ease-in-out;
+      }
+    }    
+  }
+
+  .active {
+    background-color: #fff;
+  }
+
+
+
+}

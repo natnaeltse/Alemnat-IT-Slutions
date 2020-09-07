@@ -1,0 +1,225 @@
+@mixin heading {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+  }
+  
+  body {
+    width: 100%;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+    // user-select: none;
+    ::selection {
+      color: $myWhite;
+      background-color: $myRed;
+    }
+  }
+
+  .container {
+    margin: 0 auto;
+    max-width: 1400px;
+    padding: 0 8%;
+    width: 100%;
+  }
+
+  nav.nav-bg {
+    background-color: $myWhite;
+    color: $myGray;
+
+    p {
+      .lang a {
+        color: $myGray;
+      }
+    }
+
+    .nav-links li {
+      a {
+        color: $myGray;
+      }
+    }
+
+    .ham-icon hr {
+      border-color: $myGray;
+    }
+
+    .ham-icon:hover hr {
+      border-color: $myRed;
+    }
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 100vw;
+    justify-content: flex-start;
+    align-content: space-around;
+    border-bottom: 1px solid $myGray;
+    font-size: 1.2rem;
+    z-index: 100;
+    color: $myWhite;
+    background-color: rgba(0, 0, 0, 0);
+    transition: all 0.5s;
+
+    p {
+      text-align: end;
+      margin-top: 10px;
+      padding-right: 1rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+      
+      .lang a {
+        text-decoration: none;
+        color: $myWhite;
+      }
+
+      .lang.en a, .lang.nl a {
+        color: $myRed;
+      }
+    }
+  
+    .nav-div {
+      justify-self: center;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+  
+    .logo {
+      position: relative;
+      top: -15px;
+      height: 60px;
+      width: 120px;
+      cursor: pointer;
+    }
+  
+    .nav-links {
+      list-style: none;
+      align-self: flex-end;
+    }
+  
+    .nav-links li {
+      display: inline-block;
+      transition: 500ms;
+      padding: .8rem 2rem;
+      font-weight: 500;
+
+      a {
+        text-decoration: none;
+        color: $myWhite;
+        transition: all 0.4s;
+      }
+  
+      &:hover a {
+        color: $myRed;
+      }
+    }
+  
+    .ham-icon {
+      display: none;
+      width: 40px;
+      height: 40px;
+      margin-right: 40px;
+      align-self: flex-end;
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      cursor: pointer;
+      z-index: 2;
+      
+      hr {
+        display: block;
+        border: 1px solid $myWhite;
+        margin: 10px 0;
+      }
+      .hr-top {
+        width: 50%;
+        @include var-transitions ();
+      }
+      .hr-mid {
+        width: 75%;
+        @include var-transitions ();
+      }
+      .hr-bottom {
+        width: 100%;
+      }
+  
+      &:hover {
+        hr {
+          border-color: $myRed;
+        }
+        .hr-top {
+          width: 100%;
+        }
+        .hr-mid {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  section {
+    width: 100%;
+    height: 100vh;
+  }
+
+
+  @media screen and (max-width: 900px){
+    nav {
+      .ham-icon {
+        display: block;
+      }
+
+      .nav-div  div {
+        height: 0px;
+        position: absolute;
+        top: 87px;
+        left: 0;
+        width: 100vw;
+        background-color: $myWhite;
+        transition: height 0.4s;        
+
+        ul li {
+          display: none;
+          width: 100%;
+          text-align: center;
+          opacity: 0;
+
+          @for $i from 1 through 4 {
+            &:nth-child(#{$i}) {
+              transition: opacity $i*0.1s;
+            }
+          }          
+
+          a {
+            color: $myGray;
+          }
+
+          &:hover a {
+            color: $myRed;
+          }
+        }
+
+        &.slide-down {
+          height: 194px;
+
+          ul li {
+            display: block;
+            opacity: 1;
+          }
+        }
+      }
+    }
+    
+  
+  }
+
+
+
+}
+
+
+

@@ -1,0 +1,158 @@
+@mixin contactus {
+  .contactus {
+    height: 50vh;
+    background-color: $myWhite;
+    color: $myGray;
+    padding: 8rem 0;
+
+    h3 {
+      font-size: 1.5em;
+      text-align: center;
+    }
+
+    .holder {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .address {
+      flex-basis: 40%;
+      min-width: 370px;
+      max-width: 600px;
+      margin: 3rem 0;
+      padding-right: 2rem;
+      border-right: 1px solid $myGray;
+      height: fit-content;
+
+      h3 {
+        text-align: left;
+        margin: 0 0 2rem 0;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid $myGray;
+      }
+      
+      table {
+        font-size: 1.2rem;
+        
+        td {
+          padding: 5px 20px;
+          letter-spacing: 1px;
+        }
+
+        td:first-of-type {
+          color: $myGreen;
+        }
+
+        td#map-icon {
+          vertical-align: top;
+        }
+      }
+
+    }    
+
+    .contact-form {
+      flex-basis: 50%;
+      margin: 4.7rem 0 5rem 0;
+      min-width: 370px;
+
+      form {
+        padding-left: 2rem;
+      }
+
+      .float {
+        width: 100%;
+        position: relative;
+        display: block;
+        margin-bottom: 3rem;
+        
+        label {
+          display: block;
+          position: absolute;
+          top: 0px;
+          left: 0;
+          font-size: 1.2rem;
+          margin: 0 0 5px 0;
+          transition: all .4s;
+        }
+
+        input {
+          width: 100%;
+          margin: 0;
+          padding: 5px 0 0 0;
+          line-height: 1.5;
+          font-size: 1.2rem;
+          border-bottom: 1px solid $myGray;
+        }
+
+        input:focus + label {
+          color: $myGreen;
+          transform: translateY(-2rem);
+        }
+
+        input:valid + label {
+          color: $myGreen;
+          transform: translateY(-2rem);
+        }
+
+        textarea {
+          max-width: 100%;
+          min-width: 100%;
+          width: 100%;
+          margin-top: 1px;
+          border-bottom: 1px solid $myGray;
+          font-size: 1.2rem;
+          min-height: 2rem;
+        }
+
+        textarea:focus + label {
+          color: $myGreen;
+          transform: translateY(-2rem);
+        }
+
+        textarea:valid + label {
+          color: $myGreen;
+          transform: translateY(-2rem);
+        }
+
+
+      }
+    
+      button[type='submit'] {
+        display: block;
+        margin: 0 auto;
+        padding: 20px 40px;
+        background-color: $myGreen;
+        color: $myWhite;
+        font-size: 1.2rem;
+        font-weight: 600;
+        border-radius: 10px;
+      }
+
+    }
+
+    .map {
+      height: 400px;
+      margin: 5rem auto;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    .holder {
+      flex-direction: column;
+
+      .address {
+        border: none;
+      }
+
+      .contact-form {
+        flex-basis: 100%;
+        min-width: 300px;
+
+        form {
+          padding: 0;
+        }
+      }
+    }
+  }
+}

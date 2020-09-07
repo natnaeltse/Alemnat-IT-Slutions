@@ -1,0 +1,15 @@
+
+@import './variables';
+@import './configs';
+@import 'heading';
+@import 'home';
+@import 'aboutus';
+@import 'services';
+@import 'contactus';
+
+@include heading ();
+@include home ();
+@include aboutus ();
+@include services ();
+@include contactus ();
+

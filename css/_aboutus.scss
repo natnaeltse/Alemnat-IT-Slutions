@@ -1,0 +1,76 @@
+// #######################################################
+//                      Aboutus page
+// #######################################################
+
+@mixin aboutus {  
+  .aboutus {
+    width: 100%;
+    height: initial;
+    padding: 8rem 0;
+    display: flex;
+    flex-wrap: wrap;
+
+    & > div {
+      flex-basis: 50%;
+
+      h3 {
+        font-size: 2rem;
+        margin: 0 0 1.5rem 0;
+      }
+      p {
+        color: $myLightGray;
+        font-size: 0.9rem;
+        line-height: 1.3rem;
+        margin: 0 2rem 3rem 0;
+      }
+      img {
+        width: 100%;
+        max-width: 600px;
+        margin-top: 3.8rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 900px){ 
+    .aboutus {
+
+      .text {
+        flex-basis: 100%;
+        display: flex;
+
+        div {
+          flex-basis: 50%;
+        }
+
+        p {
+          margin-bottom: 0;
+        }
+
+      }
+
+      .image {
+        flex-basis: 100%;
+
+        img {
+          width: 100%;
+          max-width: 100%;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 560px) {
+    .aboutus {
+
+      .text {
+        flex-direction: column;
+
+        div:first-of-type {
+          margin-bottom: 2rem;
+        }
+      }
+    }
+  }
+  
+}

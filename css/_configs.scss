@@ -1,0 +1,35 @@
+@mixin var-transitions {
+  transition: all 500ms;
+}
+@mixin var-transitions-1 {
+  transition: all 500ms;
+}
+
+@mixin carousel-div {
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 33.33%;
+  height: 100vh;
+  padding: 0;
+  float: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+
+  h1 {
+    font-size: 65px;
+    margin-bottom: 40px;
+  }
+
+  p {
+    font-size: 20px;
+  }
+
+}
+
+
+
+
+
